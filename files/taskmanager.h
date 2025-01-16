@@ -1,0 +1,1 @@
+std::string Summator(int n);
