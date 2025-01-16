@@ -12,19 +12,12 @@ int main()
     std::cout << "Введите n: ";
     std::cin >> n;
 
-    // защита от дурака если пользователь ввел не число
-    while (std::cin.fail())
+    // защита от дурака если пользователь ввел не число или n < 10
+    while (std::cin.fail() || n <= 9)
     {
         std::cout << "!! Некорректное значение n. Попробуй еще раз !! " << std::endl;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Введи n (нормально): ";
-        std::cin >> n;
-    }
-    // вторая защита от дурака если n < 10
-    while (n <= 9)
-    {
-        std::cout << "!! По условию задачи, n должно быть больше или равно 10 !!" << std::endl;
         std::cout << "Введи n (нормально): ";
         std::cin >> n;
     }
